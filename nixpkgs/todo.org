@@ -1,0 +1,22 @@
+- [X] mandatory
+  - [X] configure git
+  - [X] dropbox
+  - [X] firefox configuration
+  - [X] org
+  - [X] secret management
+    - configuration bootstrap avec le minimum nécessaire
+      - [X] git
+      - [X] security
+    - configuration standard
+  - [ ] wrapper to define projects
+  - [ ] lorri
+  - [ ] wakeo configuration on secret branch
+  - [ ] make a wakeo project work
+- [ ] optional
+  - [ ] ssh keys
+  - [ ] icons
+  - [ ] gnome configuration
+    - [ ] gnome extensions configuration
+  - [ ] slack configuration
+  - [ ] guake
+  - [ ] authy

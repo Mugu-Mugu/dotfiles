@@ -4,10 +4,14 @@
 
   programs.git = {
     enable = true;
-    userName = "Mugu";
+    userName = "MuguMugu";
     userEmail = "amardavid3241@gmail.com";
-
     # TODO maybe interesting
     # delta.enable = true;
   };
+
+  home.packages = with pkgs; [
+    git-crypt
+  ];
+
 }

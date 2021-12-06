@@ -4,8 +4,6 @@
   # required dependencies
   home.packages = with pkgs; [
     git
-    fira-code
-    fira-code-symbols
     libvterm
     libtool
     cmake

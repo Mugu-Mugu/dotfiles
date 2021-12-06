@@ -6,5 +6,8 @@
     ./dropbox.nix
     ./firefox.nix
     ./docker.nix
+    ./security.nix
+    ./fonts.nix
+    ./home_manager.nix
   ];
 }

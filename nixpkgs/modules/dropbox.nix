@@ -8,7 +8,7 @@
     path = "${config.home.homeDirectory}/Dropbox";
   };
 
-  home.file."org".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dropbox/";
+  home.file."org".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dropbox/org/";
 
   # automatically start dropbox
   xdg.configFile."autostart/dropbox.desktop".text = ''

@@ -5,7 +5,7 @@
     };
   default = { config, pkgs, ... }:
     {
-      imports = [./profiles/base_conf.nix];
+      imports = [./profiles/base.nix];
     };
   wakeo = { config, pkgs, ... }:
     {

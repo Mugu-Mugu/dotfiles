@@ -9,5 +9,6 @@
     ./security.nix
     ./fonts.nix
     ./home_manager.nix
+    ./ssh.nix
   ];
 }

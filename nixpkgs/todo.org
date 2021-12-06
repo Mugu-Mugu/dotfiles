@@ -1,22 +1,13 @@
-- [X] mandatory
-  - [X] configure git
-  - [X] dropbox
-  - [X] firefox configuration
-  - [X] org
-  - [X] secret management
-    - configuration bootstrap avec le minimum nécessaire
-      - [X] git
-      - [X] security
-    - configuration standard
-  - [ ] wrapper to define projects
-  - [ ] lorri
-  - [ ] wakeo configuration on secret branch
-  - [ ] make a wakeo project work
-- [ ] optional
-  - [ ] ssh keys
-  - [ ] icons
-  - [ ] gnome configuration
-    - [ ] gnome extensions configuration
-  - [ ] slack configuration
-  - [ ] guake
-  - [ ] authy
+- [ ] wrapper to define projects
+  the idea would be to define a project as a repo and a list of dependencies
+  this would allow to have:
+  - automatic repository initialization if it was not defined yet
+  - automatic direnv/lorri setup to allow tooling to works (without docker which is a pita)
+- [ ] lorri
+- [ ] ssh files are hardcoded
+- [ ] icons
+- [ ] gnome configuration
+  - [ ] gnome extensions configuration
+- [ ] slack configuration
+- [ ] guake
+- [ ] authy

@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
-
 {
   imports = [
-    ../modules
-    ./wakeo
+    ./git.nix
+    ./ssh.nix
   ];
 }

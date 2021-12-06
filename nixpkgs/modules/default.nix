@@ -5,5 +5,6 @@
     ./emacs.nix
     ./dropbox.nix
     ./firefox.nix
+    ./docker.nix
   ];
 }

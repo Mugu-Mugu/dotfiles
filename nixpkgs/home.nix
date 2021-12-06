@@ -9,6 +9,6 @@
     };
   wakeo = { config, pkgs, ... }:
     {
-      imports = [./profiles/wakeo_conf.nix];
+      imports = [./profiles/wakeo.nix];
   };
 }

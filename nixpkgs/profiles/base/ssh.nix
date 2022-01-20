@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
-let ssh = "${config.home.homeDirectory}/.ssh";
+let secretDir = "../../../secrets/ssh/base";
+    ssh = "${config.home.homeDirectory}/.ssh";
 in
 {
   programs.ssh = {
@@ -8,10 +9,12 @@ in
       "github.com" = {
         hostname = "github.com";
         user = "MuguMugu";
-        # TODO the file is hardcoded and should come from a secret
-        identityFile = "${ssh}/id_ed25519";
+        identityFile = "${ssh}/id_rsa";
         identitiesOnly = true;
       };
     };
   };
+
+  home.file.".ssh/id_rsa".source = ./${secretDir}/id_rsa;
+  home.file.".ssh/id_rsa.pub".source = ./${secretDir}/id_rsa.pub;
 }

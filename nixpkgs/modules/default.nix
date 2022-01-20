@@ -10,5 +10,7 @@
     ./fonts.nix
     ./home_manager.nix
     ./ssh.nix
+    ./slack.nix
+    ./discord.nix
   ];
 }

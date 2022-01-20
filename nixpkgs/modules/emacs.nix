@@ -16,8 +16,8 @@
 
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs: with epkgs; [ vterm org org-plus-contrib ];
-    package = pkgs.emacsUnstableGcc;
+    extraPackages = epkgs: with epkgs; [ vterm org ];
+    package = pkgs.emacsGcc;
   };
 
   services.emacs.enable = true;
@@ -37,9 +37,9 @@
     git
   ];
 
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-    }))
-  ];
+#  nixpkgs.overlays = [
+#    (import (builtins.fetchTarball {
+#      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+#    }))
+#  ];
 }

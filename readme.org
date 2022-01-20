@@ -1,0 +1,29 @@
+* Overview
+This is my home setup defining my tools along with their configuration. Hopefully, this will allow me
+to setup a reproducible working environnement on several machines (home, work, etc.)
+
+The configuration is split along several profiles:
+- bootstrap when installing on an empty machine
+- base with a configuration designed for hobby software developpment
+- various work configuration
+
+Profiles may include sensitive information and secrets that are encrypted with [[https://github.com/AGWA/git-crypt][git-crypt]].
+
+* Getting started
+
+** Bootstraping (WIP)
+#+begin_src bash
+# Install home-manager (for instance on a ubunut system)
+./bootstrap_ubuntu.sh # or copy/paste it
+
+# Install the bootstraping home-manager environment
+home-manager switch --flake ./#bootstrap
+
+# Install the master gpg key
+
+# Unlock the repository
+git-crypt unlock
+
+# Activate the default profile
+home-manager switch --flake ./#base
+#+end_src

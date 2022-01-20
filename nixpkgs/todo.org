@@ -1,13 +1,23 @@
+- [X] discord
+- [X] slack
+- [ ] git for Me
+- [ ] git for Wakeo
+- [ ] access to github
+- [ ] ssh files should be in a secret dir
+- [ ] black theme
 - [ ] wrapper to define projects
   the idea would be to define a project as a repo and a list of dependencies
   this would allow to have:
   - automatic repository initialization if it was not defined yet
   - automatic direnv/lorri setup to allow tooling to works (without docker which is a pita)
 - [ ] lorri
-- [ ] ssh files are hardcoded
 - [ ] icons
 - [ ] gnome configuration
   - [ ] gnome extensions configuration
 - [ ] slack configuration
 - [ ] guake
 - [ ] authy
+- [ ] firefox should have a preinstallation of bitwarden or bitwarden as standalone
+
+* TODO [#D] Bootstraping should include a bootstrap script for nix
+* TODO [#D] Bootstraping should also clone the repository in a predefined location

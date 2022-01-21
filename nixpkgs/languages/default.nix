@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ../modules
-    ../languages
-    ./wakeo
+    ./python.nix
   ];
 }

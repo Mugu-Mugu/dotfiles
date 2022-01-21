@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./terminal.nix
     ./git.nix
     ./emacs.nix
     ./dropbox.nix
@@ -10,7 +11,6 @@
     ./fonts.nix
     ./home_manager.nix
     ./ssh.nix
-    ./slack.nix
-    ./discord.nix
+    ./misc.nix
   ];
 }

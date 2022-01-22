@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
+inputs@{ config, pkgs, ... }:
 
 let secretDir = "../../../secrets/ssh/base";
+    keyName = "id_rsa";
     ssh = "${config.home.homeDirectory}/.ssh";
+    lib = import ../../../lib/ssh.nix inputs;
 in
 {
   programs.ssh = {
@@ -9,12 +11,15 @@ in
       "github.com" = {
         hostname = "github.com";
         user = "MuguMugu";
-        identityFile = "${ssh}/id_rsa";
+        identityFile = "${ssh}/${keyName}";
         identitiesOnly = true;
       };
     };
   };
 
-  home.file.".ssh/id_rsa".source = ./${secretDir}/id_rsa;
-  home.file.".ssh/id_rsa.pub".source = ./${secretDir}/id_rsa.pub;
+  home.activation = lib.generateSshKeyActivation {
+    privateKeyPath = ./${secretDir}/id_rsa;
+    publicKeyPath = ./${secretDir}/id_rsa.pub;
+    keyName = keyName;
+  };
 }

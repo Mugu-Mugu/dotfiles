@@ -19,4 +19,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # On some non-nixos system, the installation is not persistent
+  xsession.profileExtra = ''
+    if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
+      . ~/.nix-profile/etc/profile.d/nix.sh
+    fi;
+'';
 }

@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  # This file contains all packages and configurations relative to global security concerns
+
   programs.gpg = {
     enable = true;
     mutableKeys = true;
@@ -21,7 +23,6 @@
   };
 
   home.packages = with pkgs; [
-    authy
     bitwarden
   ];
 }

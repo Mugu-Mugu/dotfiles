@@ -3,7 +3,7 @@
 {
   imports = [
     ../modules
-    ../languages
+    ../languages/python.nix
     ./base
   ];
 

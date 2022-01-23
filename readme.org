@@ -11,9 +11,9 @@ Profiles may include sensitive information and secrets that are encrypted with [
 
 * Getting started
 
-** Bootstraping (exemple for Ubuntu)
+** Bootstrap home-manager (exemple for Ubuntu)
 #+begin_src bash
-# Install curl 
+# Install curl
 sudo apt install curl
 
 # Install home-manager and the bootstraping env
@@ -26,5 +26,24 @@ curl https://raw.githubusercontent.com/Mugu-Mugu/dotfiles/master/bootstrap_ubunt
 git-crypt unlock
 
 # Activate the default profile
-home-manager switch --flake ./#base
+hm_switch base
 #+end_src
+
+
+** Finalize installation
+Sadly not everything can be controlled and automated by home-manager. There are some manual operation left:
+- change the default shell
+#+begin_src sh
+sudo chsh -s $(which zsh)
+#+end_src
+
+- configure Firefox
+  - synchronize it
+  - reactivate some features
+    - activate bookmark toolbar visibility
+    - reset the theme if needed
+    - restore the default font to ~Deja Vu Serif~
+- configure tools which does not document a dotfile
+  - slack
+  - discord
+  - etc..

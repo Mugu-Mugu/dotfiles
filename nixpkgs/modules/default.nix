@@ -22,6 +22,7 @@
     ./security.nix
     ./fonts.nix
     ./home_manager.nix
+    ./shells
   ];
 
   home.packages = with pkgs; [
@@ -35,10 +36,6 @@
   };
 
   programs.firefox = {
-    enable = true;
-  };
-
-  programs.bash = {
     enable = true;
   };
 }

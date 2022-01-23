@@ -30,7 +30,6 @@
 
   programs.zsh.oh-my-zsh = {
     enable = true;
-    theme = "robbyrussell";
     plugins = [
       # "aws" # maybe this could be useful?
       "bundler" # may need additional configuration
@@ -43,7 +42,7 @@
       "fd"
       "fzf" # may need additional configuration
       "ripgrep"
-      "rsync-copy"
+      "rsync"
       "safe-paste"
       "zsh-interactive-cd"
 
@@ -56,6 +55,17 @@
       "virtualenv"
       "yarn"
       "zoxide"
+    ];
+  };
+
+
+  programs.zsh.zplug = {
+    enable = true;
+    plugins = [
+      {
+        name = "romkatv/powerlevel10k";
+        tags = [as:theme depth:1];
+      }
     ];
   };
 

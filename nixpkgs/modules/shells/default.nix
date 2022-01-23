@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  import [
-    zsh.nix
-    bash.nix
+  imports = [
+    ./zsh.nix
+    ./bash.nix
   ];
 }

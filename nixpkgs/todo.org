@@ -1,23 +1,23 @@
-- [X] discord
-- [X] slack
-- [ ] git for Me
-- [ ] git for Wakeo
-- [ ] access to github
-- [ ] ssh files should be in a secret dir
-- [ ] black theme
-- [ ] wrapper to define projects
-  the idea would be to define a project as a repo and a list of dependencies
-  this would allow to have:
-  - automatic repository initialization if it was not defined yet
-  - automatic direnv/lorri setup to allow tooling to works (without docker which is a pita)
-- [ ] lorri
-- [ ] icons
-- [ ] gnome configuration
-  - [ ] gnome extensions configuration
-- [ ] slack configuration
-- [ ] guake
-- [ ] authy
-- [ ] firefox should have a preinstallation of bitwarden or bitwarden as standalone
 
+* DONE [#D] Bootstraping should also clone the repository in a predefined location
+CLOSED: [2022-01-23 Sun 07:52]
+* DONE my org files should be connected to dropbox
+CLOSED: [2022-01-23 Sun 08:35]
+* TODO there should be a command/alias to switch to a different profile easily
+* TODO my previous bash configuration should be integrated
+- bonus for awesome configuration integration
+* TODO ensure dcli works for back
+- install ruby
+- install aws configuration
+* TODO my settings for base gnome environnement should be defined in nix
+* TODO my settings for gnome extensions should be defined in nix
+* TODO my shortcuts to access an application (or maybe a workspace should be) defined in nix
+* TODO the gnome application launcher should reflect current profile instead of login one
+* TODO guake should be integrated in the nix configuration
+* TODO I can define a set of tools and configuration for a given project or directory
+* TODO The configuration for a given project should be integrated within emacs
+* TODO I can define projects in Nix and ensure they are present
+- define a repository
+- define a location
+- define a environment and configuration for this project
 * TODO [#D] Bootstraping should include a bootstrap script for nix
-* TODO [#D] Bootstraping should also clone the repository in a predefined location

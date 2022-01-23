@@ -25,4 +25,7 @@
       . ~/.nix-profile/etc/profile.d/nix.sh
     fi;
 '';
+
+  # Necessary for nix application to be visible by some non-nixos system UI (like Ubuntu for instance)
+  targets.genericLinux.enable = true;
 }

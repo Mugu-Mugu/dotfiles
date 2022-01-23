@@ -1,25 +1,24 @@
-inputs@{ config, pkgs, ... }:
+inputs@{ config, pkgs, lib, ... }:
 
 let secretDir = "../../../secrets/ssh/base";
     keyName = "id_rsa";
     ssh = "${config.home.homeDirectory}/.ssh";
-    lib = import ../../../lib/ssh.nix inputs;
+    sshTools = import ../../../lib/ssh.nix inputs;
+    configureKey = sshTools.configureKey ./${secretDir};
 in
-{
-  programs.ssh = {
-    matchBlocks = {
-      "github.com" = {
-        hostname = "github.com";
-        user = "MuguMugu";
-        identityFile = "${ssh}/${keyName}";
-        identitiesOnly = true;
+lib.mkMerge [
+  {
+    programs.ssh = {
+      matchBlocks = {
+        "github.com" = {
+          hostname = "github.com";
+          user = "MuguMugu";
+          identityFile = "${ssh}/${keyName}";
+          identitiesOnly = true;
+        };
       };
     };
-  };
-
-  home.activation = lib.generateSshKeyActivation {
-    privateKeyPath = ./${secretDir}/id_rsa;
-    publicKeyPath = ./${secretDir}/id_rsa.pub;
-    keyName = keyName;
-  };
-}
+  }
+  ( configureKey { keyName = "id_rsa"; } )
+  ( configureKey { keyName = "id_rsa.pub"; })
+]

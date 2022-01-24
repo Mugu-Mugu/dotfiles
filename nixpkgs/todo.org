@@ -3,19 +3,22 @@
 CLOSED: [2022-01-23 Sun 07:52]
 * DONE my org files should be connected to dropbox
 CLOSED: [2022-01-23 Sun 08:35]
-* TODO there should be a command/alias to switch to a different profile easily
-* TODO my previous bash configuration should be integrated
+* DONE there should be a command/alias to switch to a different profile easily
+CLOSED: [2022-01-23 Sun 15:17]
+* DONE my previous bash configuration should be integrated
+CLOSED: [2022-01-23 Sun 15:18]
 - bonus for awesome configuration integration
+* DONE The configuration for a given project should be integrated within home-manager
+CLOSED: [2022-01-24 Mon 08:35]
 * TODO ensure dcli works for back
 - install ruby
 - install aws configuration
 * TODO my settings for base gnome environnement should be defined in nix
 * TODO my settings for gnome extensions should be defined in nix
-* TODO my shortcuts to access an application (or maybe a workspace should be) defined in nix
+* TODO windows management and shortcuts should be define in nix
 * TODO the gnome application launcher should reflect current profile instead of login one
 * TODO guake should be integrated in the nix configuration
 * TODO I can define a set of tools and configuration for a given project or directory
-* TODO The configuration for a given project should be integrated within emacs
 * TODO I can define projects in Nix and ensure they are present
 - define a repository
 - define a location

@@ -18,7 +18,7 @@
         "clear[${keyName}]SshKey" = config.lib.dag.entryBefore ["checkFilesChanged"] ''
             $DRY_RUN_CMD rm -f  ${sshKeyPath}
         '';
-        "load[${keyName}]SshKey" = config.lib.dag.entryAfter ["writeBoundary"] ''
+        "load[${keyName}]SshKey" = config.lib.dag.entryBefore ["linkGeneration"] ''
             $DRY_RUN_CMD chmod 600 ${storeKeyPath}
             $DRY_RUN_CMD chmod 700 ~/.ssh
             $DRY_RUN_CMD cp ${storeKeyPath} ${sshKeyPath}

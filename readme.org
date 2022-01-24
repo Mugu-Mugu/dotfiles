@@ -33,10 +33,10 @@ hm_switch base
 ** Finalize installation
 Sadly not everything can be controlled and automated by home-manager. There are some manual operation left:
 - change the default shell
-#+begin_src sh
-sudo chsh -s $(which zsh)
-#+end_src
-
+  #+begin_src sh
+  sudo chsh -s $(which zsh)
+  #+end_src
+- [[https://docs.docker.com/engine/install/ubuntu/#installation-methods][install docker]] and [[https://docs.docker.com/engine/install/linux-postinstall/][configure]] so it so it may be used without sudo
 - configure Firefox
   - synchronize it
   - reactivate some features

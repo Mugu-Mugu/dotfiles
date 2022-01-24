@@ -34,7 +34,11 @@ hm_switch base
 Sadly not everything can be controlled and automated by home-manager. There are some manual operation left:
 - change the default shell
   #+begin_src sh
-  sudo chsh -s $(which zsh)
+  # by default zsh is not an authorized shell
+  command -v zsh | sudo tee -a /etc/shells
+  # otherwise there may be a pam error
+  sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
+  chsh -s $(which zsh)
   #+end_src
 - [[https://docs.docker.com/engine/install/ubuntu/#installation-methods][install docker]] and [[https://docs.docker.com/engine/install/linux-postinstall/][configure]] so it so it may be used without sudo
 - configure Firefox
@@ -42,7 +46,7 @@ Sadly not everything can be controlled and automated by home-manager. There are 
   - reactivate some features
     - activate bookmark toolbar visibility
     - reset the theme if needed
-    - restore the default font to ~Deja Vu Serif~
+    - restore the default font to ~Deja Vu Serif~ if needed
 - configure tools which does not document a dotfile
   - slack
   - discord

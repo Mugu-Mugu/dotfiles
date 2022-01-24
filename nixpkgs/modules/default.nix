@@ -17,6 +17,7 @@
   # same topic
   imports = [
     ./git.nix
+    ./firefox.nix
     ./emacs.nix
     ./dropbox.nix
     ./security.nix
@@ -32,10 +33,6 @@
   ];
 
   programs.ssh = {
-    enable = true;
-  };
-
-  programs.firefox = {
     enable = true;
   };
 

@@ -26,6 +26,7 @@
       source ~/.bashrc
     }
 '';
+    initExtra = builtins.readFile ./p10k.zsh;
   };
 
   programs.zsh.oh-my-zsh = {

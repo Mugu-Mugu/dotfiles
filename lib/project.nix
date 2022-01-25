@@ -3,8 +3,7 @@ inputs@{ config, projectsRootDir , ... } :
   define = {
     name ? "the name of the project",
     gitLink ? "an url to a git repository",
-    shell ? "the nix shell file describing project environment",
-    additionalFiles ? []
+    files ? []
   } :
     let
       projectDir = "${projectsRootDir}/${name}";
@@ -13,15 +12,14 @@ inputs@{ config, projectsRootDir , ... } :
         all // { "${projectDir}/${builtins.baseNameOf file}".source = file; };
       linkAllFiles = builtins.foldl' addFile {};
     in  {
-      home.file = linkAllFiles additionalFiles // {
-        "${projectDir}/shell.nix".source = shell;
+      home.file = {
         "${projectDir}/.envrc".source = ../templates/.envrc;
-      };
+      } // linkAllFiles files;
       home.activation =
           {
             "initializeProject[${name}]" = config.lib.dag.entryAfter ["linkGeneration"] ''
                 if [[ ! -d  ${projectDirGit} ]]; then
-                   $DRY_RUN_CMD shopt -s dotglo
+                   $DRY_RUN_CMD shopt -s dotglob
                    $DRY_RUN_CMD git clone ${gitLink} /tmp/${name}
                    $DRY_RUN_CMD mv /tmp/${name}/* ${projectDir}/
                    $DRY_RUN_CMD rm -rf /tmp/${name}

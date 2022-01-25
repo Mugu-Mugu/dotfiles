@@ -3,14 +3,20 @@ inputs@{ config, projectsRootDir , ... } :
   define = {
     name ? "the name of the project",
     gitLink ? "an url to a git repository",
-    shell ? "the nix shell file describing project environment"
+    shell ? "the nix shell file describing project environment",
+    additionalFiles ? []
   } :
     let
       projectDir = "${projectsRootDir}/${name}";
       projectDirGit = "${projectDir}/.git";
+      addFile = all : file :
+        all // { "${projectDir}/${builtins.baseNameOf file}".source = file; };
+      linkAllFiles = builtins.foldl' addFile {};
     in  {
-      home.file."${projectDir}/shell.nix".source = shell;
-      home.file."${projectDir}/.envrc".source = ../templates/.envrc;
+      home.file = linkAllFiles additionalFiles // {
+        "${projectDir}/shell.nix".source = shell;
+        "${projectDir}/.envrc".source = ../templates/.envrc;
+      };
       home.activation =
           {
             "initializeProject[${name}]" = config.lib.dag.entryAfter ["linkGeneration"] ''

@@ -19,6 +19,7 @@ CLOSED: [2022-01-24 Mon 08:35]
 * TODO the gnome application launcher should reflect current profile instead of login one
 * TODO guake should be integrated in the nix configuration
 * TODO I can define a set of tools and configuration for a given project or directory
+* TODO add starship prompt
 * TODO I can define projects in Nix and ensure they are present
 - define a repository
 - define a location

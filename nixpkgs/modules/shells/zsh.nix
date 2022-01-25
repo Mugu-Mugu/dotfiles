@@ -23,7 +23,6 @@
         cd ~/dotfiles
         home-manager switch --flake ".#$1"
       )
-      source ~/.bashrc
     }
 '';
     initExtra = builtins.readFile ./p10k.zsh;

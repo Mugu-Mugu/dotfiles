@@ -13,6 +13,12 @@
       )
       source ~/.bashrc
     }
+    function hm_switch_debug {
+      (
+        cd ~/dotfiles
+        home-manager switch --show-trace --flake ".#$1"
+      )
+    }
 '';
 
   };

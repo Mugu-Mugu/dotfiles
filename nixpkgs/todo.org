@@ -10,9 +10,31 @@ CLOSED: [2022-01-23 Sun 15:18]
 - bonus for awesome configuration integration
 * DONE The configuration for a given project should be integrated within home-manager
 CLOSED: [2022-01-24 Mon 08:35]
-* TODO ensure dcli works for back
+* DONE ensure dcli works for back
+CLOSED: [2022-01-29 Sat 14:27]
 - install ruby
 - install aws configuration
+* TODO improve my direnv environment
+- [-] use a [[https://discourse.nixos.org/t/locally-excluding-nix-flakes-when-using-nix-independenly-of-upstream/16480][flake based approach]]
+  - [X] setup a .flake directory at the root of all projects
+  - [ ] modify the project lib to create direnv files there
+  - [ ] modify the .envrc to use the files there
+- [ ] allow usage of [[https://github.com/bobvanderlinden/nixpkgs-ruby][ruby build env]]
+- [ ] allow usage of [[https://github.com/DavHau/mach-nix][python build env]]
+#+begin_note
+Without this, I had to rely on default version packaged within the Channel. This was problematic because in
+ruby for instance, the gemfile.lock actually references and requires the exact ruby version that was used to
+generate the file; usually those version have different patch level that are not available and hard to
+reproduce.
+This means, the version should be rebuilt from hand or I should have relied on an older channel and hope the
+exact version was built.
+Using flakes allow me to reference utils that rebuild it easily for me
+#+end_note
+- [ ] Set up sls environment
+- [ ] Set up translator environment
+- [ ] Set up scrapers environment
+- [ ] Set up back environment
+- [ ] Set up lsp in these environments
 * TODO my settings for base gnome environnement should be defined in nix
 * TODO my settings for gnome extensions should be defined in nix
 * TODO windows management and shortcuts should be define in nix

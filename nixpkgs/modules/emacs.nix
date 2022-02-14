@@ -26,6 +26,15 @@
 
   services.emacs.enable = true;
 
+  xdg.desktopEntries.org-protocol = {
+    name = "Org-Protocol";
+    exec = "emacsclient %u";
+    icon = "emacs-icon";
+    categories = ["Application"];
+    terminal = false;
+    mimeType = ["x-scheme-handler/org-protocol"];
+  };
+
   # Configuring emacs in home-manager would make no sense.
   # My configuration has too much features and I don't want to manage both at the same time
   home.activation = {

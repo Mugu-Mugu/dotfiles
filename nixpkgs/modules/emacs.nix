@@ -3,7 +3,7 @@
 {
   # This package contains configuration required to start Emacs and the dependencies of my .emacs.d configuration
 
-  # required dependencies
+  # required dependencies or tools
   home.packages = with pkgs; [
     git
     libvterm
@@ -14,6 +14,8 @@
     fzf
     sqlite
     gcc
+    plantuml
+    graphviz
   ];
 
   programs.emacs = {

@@ -2,7 +2,7 @@
 
 {
 
-  home.packages = with pkgs; [ firefox ];
+  home.packages = with pkgs; [ firefox google-chrome ];
 
   # Copied from nix wiki but it looks like it doesn't work
   # home.packages = with pkgs; [ firefox-wayland ];

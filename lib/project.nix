@@ -19,13 +19,15 @@ inputs@{ config, projectsRootDir , ... } :
           {
             "initializeProject[${name}]" = config.lib.dag.entryAfter ["linkGeneration"] ''
                 $DRY_RUN_CMD rm -f ${projectShellSpec}
-                $DRY_RUN_CMD cp ${shellSpec} ${projectShellSpec}
                 if [[ ! -d  ${projectDirGit} ]]; then
+                   $DRY_RUN_CMD rm -rf /tmp/${name}
                    $DRY_RUN_CMD shopt -s dotglob
                    $DRY_RUN_CMD git clone ${gitLink} /tmp/${name}
+                   $DRY_RUN_CMD mkdir -p ${projectDir}/
                    $DRY_RUN_CMD mv /tmp/${name}/* ${projectDir}/
                    $DRY_RUN_CMD rm -rf /tmp/${name}
                 fi
+                $DRY_RUN_CMD cp ${shellSpec} ${projectShellSpec}
                 $DRY_RUN_CMD cd ${projectDir}
                 $DRY_RUN_CMD direnv allow
             '';
